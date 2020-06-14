@@ -1,0 +1,98 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - 我的 ASP.NET 应用程序</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    @using Account.Models
+    @{
+        Teacher tea = Session["Tjh"] as Teacher;
+        Student stu = Session["Sjh"] as Student;
+    }
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top" style="background-color:#992168 ; ">
+        <div class="">
+            
+            <div class="row">
+                <div class="navbar-header col-lg-3" >
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    @Html.ActionLink("天天考试网", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                </div>
+
+                <div class="col-lg-6">
+                    <ul class="nav navbar-nav" style="color:white">
+                        @if (stu == null)
+                        {
+
+                            <li>@Html.ActionLink("学生管理", "Index", "Student")</li>
+                            <li>@Html.ActionLink("老师管理", "Index", "Teacher")</li>
+                            <li>@Html.ActionLink("试卷管理", "Index", "Paper")</li>
+                            <li>@Html.ActionLink("审卷", "Contact", "Home")</li>
+                            <li>@Html.ActionLink("题库", "Contact", "Home")</li>
+
+                        }
+                        else
+                        {
+                            <li>@Html.ActionLink("我的考试", "Index", "Home")</li>
+                            <li>@Html.ActionLink("我的资料", "xiang", "Login")</li>
+                            <li>@Html.ActionLink("在线考试", "Contact", "Home")</li>
+                        }
+
+
+                    </ul>
+
+
+                </div>
+                <div>
+                    <div id="logo"><span id="logotxt" style="color:white">天天考试系统</span></div>
+                    <div id="loginmsg">
+                        @if (Session["Tjh"] == null)
+                        {
+
+
+                            <span style="color:white"> @stu.StuName 您好, 欢迎光临在线全自动考试系统</span>
+                            <a href="/Login/Exit">退出系统</a>
+                        }
+                        else if (Session["Sjh"] == null)
+                        {
+                            <span style="color:white"> @tea.TeaName 老师您好, 欢迎光临在线全自动考试系统</span>
+                            <a href="/Login/Exit">退出系统</a>
+                        }
+                        else
+                        {
+                            <a href="/Login/Index">老师登录</a>
+                            <a href="/Login/Index">学生登录</a>
+
+                        }
+
+                    </div>
+                    <div style="clear:both;"></div>
+
+                </div>
+            </div>
+
+
+        </div>
+        
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - 天天考试网</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

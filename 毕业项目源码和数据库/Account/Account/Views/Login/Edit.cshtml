@@ -1,0 +1,97 @@
+﻿
+@{
+    ViewBag.Title = "Edit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>编辑学生信息</h2>
+@{
+    Account.Models.Student stu = ViewBag.stu;
+}
+<form action="/Login/Edit" method="post">
+    <input name="__RequestVerificationToken" type="hidden" value="R3qcRds0jm5ju5WZWAz0bz_vhCCUogRDBCYyckMTvu_6XzZpZBrSnJtEST5GiAjhTkn4z-Lirceq4vpcVjxRqZKqtnx9CNVojngBQibz2Rc1" />    <div class="form-horizontal">
+        <h4>学生信息</h4>
+        <hr />
+
+        <input data-val="true" data-val-number="字段 StuID 必须是一个数字。" data-val-required="StuID 字段是必需的。" id="StuID" name="StuID" type="hidden" value="@stu.StuID" />
+
+        <div class="form-group">
+            <label class="control-label col-md-2" for="StuName">姓名</label>
+            <div class="col-md-10">
+                <input class="form-control text-box single-line" data-val="true" data-val-required="姓名是必填项" id="StuName" name="StuName" type="text" value="@stu.StuName" />
+                <span class="field-validation-valid text-danger" data-valmsg-for="StuName" data-valmsg-replace="true"></span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2" for="StuLoginName">登录名</label>
+            <div class="col-md-10">
+                <input class="form-control text-box single-line" data-val="true" data-val-required="登录名是必填项" id="StuLoginName" name="StuLoginName" type="text" value="@stu.StuLoginName" />
+                <span class="field-validation-valid text-danger" data-valmsg-for="StuLoginName" data-valmsg-replace="true"></span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2" for="StuLoginPwd">密码</label>
+            <div class="col-md-10">
+                <input class="form-control text-box single-line" data-val="true" data-val-required="密码是必填项" id="StuLoginPwd" name="StuLoginPwd" type="text" value="@stu.StuLoginPwd" />
+                <span class="field-validation-valid text-danger" data-valmsg-for="StuLoginPwd" data-valmsg-replace="true"></span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2" for="StuSex">性别</label>
+            <div class="col-md-10">
+                <div class="checkbox">
+                    @if (stu.StuSex == 0)
+                    {
+                        <input data-val="true" data-val-required="性别是必填项" id="StuSex" name="StuSex" type="radio" value="0" checked="checked" />@:男
+                        <input id="StuSex" name="StuSex" type="radio" value="1" />@: 女
+
+                    }
+                    else
+                    {
+                        <input data-val="true" data-val-required="性别是必填项" id="StuSex" name="StuSex" type="radio" value="True" />@:男
+                        <input checked="checked" id="StuSex" name="StuSex" type="radio" value="False" /> @:女
+                    }
+
+                    <span class="field-validation-valid text-danger" data-valmsg-for="StuSex" data-valmsg-replace="true"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2" for="StuPhone">电话</label>
+            <div class="col-md-10">
+                <input class="form-control text-box single-line" id="StuPhone" name="StuPhone" type="text" value="@stu.StuPhone" />
+                <span class="field-validation-valid text-danger" data-valmsg-for="StuPhone" data-valmsg-replace="true"></span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2" for="StuEmail">Email</label>
+            <div class="col-md-10">
+                <input class="form-control text-box single-line" id="StuEmail" name="StuEmail" type="text" value="@stu.StuEmail" />
+                <span class="field-validation-valid text-danger" data-valmsg-for="StuEmail" data-valmsg-replace="true"></span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2" for="StuGrade">班级</label>
+            <div class="col-md-10">
+                <input class="form-control text-box single-line" id="StuGrade" name="StuGrade" type="text" value="@stu.StuGrade" />
+                <span class="field-validation-valid text-danger" data-valmsg-for="StuGrade" data-valmsg-replace="true"></span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value=" 保存 " class="btn   btn-primary" />
+            </div>
+        </div>
+    </div>
+</form>
+<div>
+    <a href="/Login/xiang">返回</a>
+</div>
+

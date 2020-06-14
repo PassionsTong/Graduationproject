@@ -1,0 +1,62 @@
+﻿
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@{
+    Account.Models.Teacher tea = ViewBag.tea;
+}
+<h2>教师信息详情</h2>
+
+<div>
+    <h4>教师信息</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            姓名：
+        </dt>
+
+        <dd>
+            @tea.TeaName
+        </dd>
+
+        <dt>
+            登录名：
+        </dt>
+
+        <dd>
+            @tea.TeaLoginName
+        </dd>
+
+        <dt>
+            密码：
+        </dt>
+
+        <dd>
+            @tea.TeaLoginPwd
+        </dd>
+
+        <dt>
+            电话：
+        </dt>
+
+        <dd>
+            @tea.TeaPhone
+        </dd>
+
+        <dt>
+            Email：
+        </dt>
+
+        <dd>
+            @tea.TeaEmail
+        </dd>
+
+    </dl>
+</div>
+<p>
+    <a href="/Teacher/Edit/@tea.TeaID">编辑</a> |
+    <a href="/Teacher/Index">返回教师列表</a>
+</p>
+

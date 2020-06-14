@@ -1,0 +1,40 @@
+﻿
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+@{
+    Account.Models.Paper paper = ViewBag.pa;
+
+}
+@using Account.Models;
+@model List<Topic>
+<h2>试卷详情</h2>
+<div>
+    <fieldset>
+        <legend>试卷信息</legend>
+        <dl class="dl-horizontal">
+            <dt> 试卷名：</dt>
+            <dd>@paper.PaperNmae</dd>
+            <dt> 试卷说明：</dt>
+            <dd> @paper.PaperExplain</dd>
+            <dt> 试卷时长：</dt>
+            <dd> @paper.PaperTime 分钟</dd>
+            <dt> 试卷总分</dt>
+            <dd> </dd>
+        </dl>
+    </fieldset>
+
+    <fieldset>
+        <legend>试卷内容</legend>
+        
+    </fieldset>
+
+</div>
+<p>
+    <a href="/Paper/Edit/@paper.PaperID">修改试卷信息</a> |
+    <a href="/Paper/Index">返回试卷列表</a>
+</p>

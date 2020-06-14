@@ -1,0 +1,83 @@
+﻿
+@{
+    ViewBag.Title = "Create";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>学生注册</h2>
+
+<form action="/Student/Create" method="post">
+    <input name="__RequestVerificationToken" type="hidden" value="rCmfLSOj0rXNXZ4jVfMGZQjX4JTe3OlN62bzioozk9Fvju0K5uzwKUuAbmSPsyY7m3zx_cWq-9yCFbtReJr2Fb0V--xzEXWFOBtd55A_jTQ1" />    <div class="form-horizontal">
+        <h4>学生信息</h4>
+        <hr />
+
+        <div class="form-group">
+            <label class="control-label col-md-2" for="StuName">姓名</label>
+            <div class="col-md-10">
+                <input class="form-control text-box single-line" data-val="true" data-val-required="姓名是必填项" id="StuName" name="StuName" type="text" value="" />
+                <span class="field-validation-valid text-danger" data-valmsg-for="StuName" data-valmsg-replace="true"></span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2" for="StuLoginName">登录名</label>
+            <div class="col-md-10">
+                <input class="form-control text-box single-line" data-val="true" data-val-required="登录名是必填项" id="StuLoginName" name="StuLoginName" type="text" value="" />
+                <span class="field-validation-valid text-danger" data-valmsg-for="StuLoginName" data-valmsg-replace="true"></span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2" for="StuLoginPwd">密码</label>
+            <div class="col-md-10">
+                <input class="form-control text-box single-line" data-val="true" data-val-required="密码是必填项" id="StuLoginPwd" name="StuLoginPwd" type="text" value="" />
+                <span class="field-validation-valid text-danger" data-valmsg-for="StuLoginPwd" data-valmsg-replace="true"></span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2" for="StuSex">性别</label>
+            <div class="col-md-10">
+                <div class="checkbox">
+                    <input checked="checked" data-val="true" data-val-required="性别是必填项" id="StuSex" name="StuSex" type="radio" value="0" /> 男  
+                    <input id="StuSex" name="StuSex" type="radio" value="1" /> 女
+                    <span class="field-validation-valid text-danger" data-valmsg-for="StuSex" data-valmsg-replace="true"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2" for="StuPhone">电话</label>
+            <div class="col-md-10">
+                <input class="form-control text-box single-line" id="StuPhone" name="StuPhone" type="text" value="" />
+                <span class="field-validation-valid text-danger" data-valmsg-for="StuPhone" data-valmsg-replace="true"></span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2" for="StuEmail">Email</label>
+            <div class="col-md-10">
+                <input class="form-control text-box single-line" id="StuEmail" name="StuEmail" type="text" value="" />
+                <span class="field-validation-valid text-danger" data-valmsg-for="StuEmail" data-valmsg-replace="true"></span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2" for="StuGrade">班级</label>
+            <div class="col-md-10">
+                <input class="form-control text-box single-line" id="StuGrade" name="StuGrade" type="text" value="" />
+                <span class="field-validation-valid text-danger" data-valmsg-for="StuGrade" data-valmsg-replace="true"></span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value=" 保存 " class="btn   btn-primary" />
+            </div>
+        </div>
+    </div>
+</form>
+<div>
+    <a href="/Student/Index">返回学生列表</a>
+</div>
+

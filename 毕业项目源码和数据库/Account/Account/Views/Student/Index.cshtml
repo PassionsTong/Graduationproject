@@ -1,0 +1,54 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using Account.Models;
+@model List<Student>
+<h2>学生列表</h2>
+<p>
+    <a href="/Student/Create" class="btn  btn-primary">添加新的学生</a>
+</p>
+<table class=" table  table-bordered table-hover ">
+    <tr>
+        <th>姓名</th>
+        <th>登录名</th>
+        <th>密码</th>
+        <th>性别</th>
+        <th>电话</th>
+        <th>Email</th>
+        <th>班级</th>
+        <th>操作</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.StuName</td>
+            <td>@item.StuLoginName</td>
+            <td>@item.StuLoginPwd</td>
+            <td>
+                @if (item.StuSex == 0)
+                {
+                    @:男
+
+                }
+                else
+                {
+                    @:女
+
+                }
+            </td>
+            <td>@item.StuPhone</td>
+            <td>@item.StuEmail</td>
+            <td>@item.StuGrade</td>
+            <td>
+                <a href="/Student/Edit?id=@item.StuID" class="btn  btn-default">编辑</a> |
+                <a href="/Student/Details?id=@item.StuID" class="btn  btn-primary">详情</a> |
+                <a href="/Student/Delete?id=@item.StuID" class="btn btn-danger" onclick="return confirm('你确定要删除 @item.StuName 这一栏么？')">删除</a>
+            </td>
+        </tr>
+
+    }
+
+</table>
+

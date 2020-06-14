@@ -1,0 +1,62 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using Account.Models;
+@model List<Teacher>
+<h2>教师列表</h2>
+<p>
+    <a href="/Teacher/Create" class="btn  btn-primary">添加新老师</a>
+</p>
+<table class=" table  table-bordered table-hover ">
+    <tr>
+        <th>
+            姓名
+        </th>
+        <th>
+            登录名
+        </th>
+        <th>
+            密码
+        </th>
+        <th>
+            电话
+        </th>
+        <th>
+            Email
+        </th>
+        <th>
+            操作
+        </th>
+    </tr>
+    @foreach (var item in Model)
+    {
+
+        <tr>
+            <td>
+                @item.TeaName
+            </td>
+            <td>
+                @item.TeaLoginName
+            </td>
+            <td>
+                @item.TeaLoginPwd
+            </td>
+            <td>
+                @item.TeaPhone
+            </td>
+            <td>
+                @item.TeaEmail
+            </td>
+            <td>
+                <a href="/Teacher/Edit?id=@item.TeaID" class="btn  btn-default">编辑</a> |
+                <a href="/Teacher/Details?id=@item.TeaID" class="btn  btn-primary">详情</a> |
+                <a href="/Teacher/Delete?id=@item.TeaID" class="btn btn-danger" onclick="return confirm('你确定要删除 @item.TeaName 这一栏么？')">删除</a>
+            </td>
+
+        </tr>
+
+    }
+</table>

@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="AccountModelStoreContainer" CdmEntityContainer="AccountEntities">
+    <EntitySetMapping Name="Answer">
+      <EntityTypeMapping TypeName="AccountModel.Answer">
+        <MappingFragment StoreEntitySet="Answer">
+          <ScalarProperty Name="AnswerID" ColumnName="AnswerID" />
+          <ScalarProperty Name="PaperID" ColumnName="PaperID" />
+          <ScalarProperty Name="StuID" ColumnName="StuID" />
+          <ScalarProperty Name="TeaID" ColumnName="TeaID" />
+          <ScalarProperty Name="AnswerScore" ColumnName="AnswerScore" />
+          <ScalarProperty Name="AnswerTime" ColumnName="AnswerTime" />
+          <ScalarProperty Name="SubmitTime" ColumnName="SubmitTime" />
+          <ScalarProperty Name="BatchTime" ColumnName="BatchTime" />
+          <ScalarProperty Name="AnswerState" ColumnName="AnswerState" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Detail">
+      <EntityTypeMapping TypeName="AccountModel.Detail">
+        <MappingFragment StoreEntitySet="Detail">
+          <ScalarProperty Name="DetailID" ColumnName="DetailID" />
+          <ScalarProperty Name="AnswerID" ColumnName="AnswerID" />
+          <ScalarProperty Name="TopicID" ColumnName="TopicID" />
+          <ScalarProperty Name="DetailAnswer" ColumnName="DetailAnswer" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Paper">
+      <EntityTypeMapping TypeName="AccountModel.Paper">
+        <MappingFragment StoreEntitySet="Paper">
+          <ScalarProperty Name="PaperID" ColumnName="PaperID" />
+          <ScalarProperty Name="PaperNmae" ColumnName="PaperNmae" />
+          <ScalarProperty Name="PaperExplain" ColumnName="PaperExplain" />
+          <ScalarProperty Name="PaperTime" ColumnName="PaperTime" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Selects">
+      <EntityTypeMapping TypeName="AccountModel.Selects">
+        <MappingFragment StoreEntitySet="Selects">
+          <ScalarProperty Name="SelectID" ColumnName="SelectID" />
+          <ScalarProperty Name="PaperID" ColumnName="PaperID" />
+          <ScalarProperty Name="TopicID" ColumnName="TopicID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Student">
+      <EntityTypeMapping TypeName="AccountModel.Student">
+        <MappingFragment StoreEntitySet="Student">
+          <ScalarProperty Name="StuID" ColumnName="StuID" />
+          <ScalarProperty Name="StuName" ColumnName="StuName" />
+          <ScalarProperty Name="StuLoginName" ColumnName="StuLoginName" />
+          <ScalarProperty Name="StuLoginPwd" ColumnName="StuLoginPwd" />
+          <ScalarProperty Name="StuSex" ColumnName="StuSex" />
+          <ScalarProperty Name="StuPhone" ColumnName="StuPhone" />
+          <ScalarProperty Name="StuEmail" ColumnName="StuEmail" />
+          <ScalarProperty Name="StuGrade" ColumnName="StuGrade" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Teacher">
+      <EntityTypeMapping TypeName="AccountModel.Teacher">
+        <MappingFragment StoreEntitySet="Teacher">
+          <ScalarProperty Name="TeaID" ColumnName="TeaID" />
+          <ScalarProperty Name="TeaName" ColumnName="TeaName" />
+          <ScalarProperty Name="TeaLoginName" ColumnName="TeaLoginName" />
+          <ScalarProperty Name="TeaLoginPwd" ColumnName="TeaLoginPwd" />
+          <ScalarProperty Name="TeaPhone" ColumnName="TeaPhone" />
+          <ScalarProperty Name="TeaEmail" ColumnName="TeaEmail" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Topic">
+      <EntityTypeMapping TypeName="AccountModel.Topic">
+        <MappingFragment StoreEntitySet="Topic">
+          <ScalarProperty Name="TopicID" ColumnName="TopicID" />
+          <ScalarProperty Name="TopicExplain" ColumnName="TopicExplain" />
+          <ScalarProperty Name="TopicScore" ColumnName="TopicScore" />
+          <ScalarProperty Name="TopicType" ColumnName="TopicType" />
+          <ScalarProperty Name="TopicA" ColumnName="TopicA" />
+          <ScalarProperty Name="TopicB" ColumnName="TopicB" />
+          <ScalarProperty Name="TopicC" ColumnName="TopicC" />
+          <ScalarProperty Name="TopicD" ColumnName="TopicD" />
+          <ScalarProperty Name="TopicSort" ColumnName="TopicSort" />
+          <ScalarProperty Name="TopicAnswer" ColumnName="TopicAnswer" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
