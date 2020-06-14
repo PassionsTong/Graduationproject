@@ -30,10 +30,10 @@ TopicID int primary key identity (1,1) not null,
 TopicExplain nvarchar(200) not null,
 TopicScore int not null,
 TopicType int not null,
-TopicA nvarchar(100) NULL,
-TopicB nvarchar(100) NULL,
-TopicC nvarchar(100) NULL,
-TopicD nvarchar(100) NULL,
+TopicA nvarchar(100) not NULL,
+TopicB nvarchar(100) not NULL,
+TopicC nvarchar(100) not NULL,
+TopicD nvarchar(100) not NULL,
 TopicSort int NOT NULL,
 TopicAnswer nvarchar(200) NOT NULL,
 )
@@ -47,15 +47,15 @@ AnswerID int primary key identity (1,1) not null,
 PaperID int foreign key references Paper(PaperID),
 StuID int foreign key references Student(StuID),
 TeaID int foreign key references Teacher(TeaID),
-AnswerScore int NULL,
-AnswerTime datetime NULL,
-SubmitTime datetime NULL,
-BatchTime datetime NULL,
+AnswerScore int not NULL,
+AnswerTime datetime not NULL,
+SubmitTime datetime not NULL,
+BatchTime datetime not NULL,
 AnswerState int NOT NULL
 )
 create table Detail(
 DetailID int primary key identity (1,1) not null,
 AnswerID int foreign key references Answer(AnswerID),
 TopicID int foreign key references Topic(TopicID),
-DetailAnswer nvarchar (200) NULL
+DetailAnswer nvarchar (200) not NULL
 )
