@@ -1,0 +1,40 @@
+﻿
+@{
+    ViewBag.Title = "Creates";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@{
+    Account.Models.Paper paper = ViewBag.pa;
+
+}
+
+<h2>添加考题</h2>
+<p>
+    <a href="/" class="btn  btn-primary">随机抽选</a>
+    <select class="form-control" data-val="true" data-val-number="字段 类型 必须是一个数字。" data-val-required="类型是必填项" id="TopicType" name="TopicType">
+        <option selected="selected" value="1">5</option>
+        <option value="2">10</option>
+        <option value="3">15</option>
+    </select>
+</p>
+<div>
+    <fieldset>
+        <legend>试卷信息</legend>
+        <dl class="dl-horizontal">
+            <dt> 试卷名</dt>
+            <dd>@paper.PaperNmae</dd>
+            <dt> 试卷说明</dt>
+            <dd> @paper.PaperExplain</dd>
+            <dt> 试卷时长</dt>
+            <dd> @paper.PaperTime 分钟</dd>
+            <dt> 试卷总分</dt>
+            <dd> </dd>
+        </dl>
+    </fieldset>
+
+    <fieldset>
+        <legend>试卷内容</legend>
+        
+    </fieldset>
+
+</div>
