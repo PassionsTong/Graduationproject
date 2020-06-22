@@ -1,0 +1,71 @@
+﻿
+@{
+    ViewBag.Title = "AnswerDatail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+    <script src="~/Scripts/jquery-3.4.1.min.js"></script>
+    <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+@using Account.Models 
+@model Account.Models.Answer
+    @{ 
+        ViewBag.Titie = "在线考试";
+    }
+
+    <h2>在线考试</h2>
+    <table>
+        <tr>
+            <td>
+                <h4>试卷描述</h4><hr />
+                试卷名称：@Model.Paper.PaperNmae<br />
+                试卷介绍：@Model.Paper.PaperExplain<br />
+                试卷时长：@Model.Paper.PaperTime<br />
+
+            </td>
+            <td>         </td>
+            <td>
+                <h4>考生信息</h4><hr />
+                学生名字：@Model.Student.StuName<br />
+                学生班级：@Model.Student.StuGrade<br />
+                <a href="#">交卷</a>
+
+            </td>
+        </tr>
+    </table>
+    <fieldset>
+        <legend>答题区</legend>
+        <div>
+            @for (int i = 1; i <=Model.Paper.Selects.Count; i++)
+            {
+            <a href="#" onclick="topic(@Model.AnswerID,@i);">@i</a>
+
+            }
+            <a href="#" onclick="showAnswer(@Model.AnswerID);">试卷内容</a>
+        </div>
+        @using (Ajax.BeginForm("SubmitAnswer","Answers",null,new AjaxOptions {
+            UpdateTargetId="topic",HttpMethod="Post",OnSuccess=""
+
+        })){ 
+           <div id="topic" style="border:1px solid gray">
+
+           </div>
+        }
+    </fieldset>
+    <script type="text/javascript">
+        function topic(aid,sort)
+        {
+            var url = '/Answers/_Topic?aid=' + aid + '&sort=' + sort;
+            $.get(url, function (data) {
+                $('#topic').html(data);
+            })
+        }
+        function showAnswer(aid) {
+            var url = '/Answers/_AllDetailStu?aid=' + aid;
+            $.get(url, function (data) {
+                $('#topic').html(data);
+            })
+        }
+        $(
+            topic(@Model.AnswerID,1)
+        )
+
+    </script>

@@ -1,0 +1,46 @@
+﻿
+@{
+    ViewBag.Title = "PaperIndex";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using Account.Models;
+@model List<Topic>
+<h2>添加考题</h2>
+
+<div>
+    <ul style="list-style:inside;">
+        @foreach (var item in Model)
+        {
+            <li style="padding:20px;">
+                <span style="font-weight:bold">@item.TopicExplain</span>(@item.TopicScore 分)
+                <a href="/Topics/Delete/@item.TopicID" onclick="return confirm('你确定要删除这一栏么？')">删除考题</a>-
+                <a href="/Topics/Edit/@item.TopicID">修改考题</a>-
+                <a href="/Topics/Paper/@item.TopicID">添加到试卷</a>
+                <ul style="padding-left:30px;">
+                    @if (item.TopicType == 1)
+                    {
+                        <li>A.@item.TopicA</li>
+                        <li>B.@item.TopicB</li>
+                        <li>C.@item.TopicC</li>
+                        <li>D.@item.TopicD</li>
+
+                    }
+                    else if (item.TopicType == 2)
+                    {
+                        <li>该题为判断题</li>
+                    }
+                    else if (item.TopicType == 3)
+                    {
+                        <li>该题为问答题</li>
+                    }
+                    <li>答案.@item.TopicAnswer</li>
+                </ul>
+            </li>
+
+        }
+
+    </ul>
+</div>
+
+

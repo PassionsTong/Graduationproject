@@ -1,0 +1,45 @@
+﻿
+@{
+    ViewBag.Title = "_AllDetailStu";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+    <fieldset>
+        <legend>试卷内容</legend>
+        <ul style="list-style:inside;">
+            @foreach (Account.Models.Detail item in ViewBag.Detail)
+            {
+            <li style="padding:20px;">
+                <span style="font-weight:bold">@item.Topic.TopicExplain</span>(@item.Topic.TopicScore 分)              
+            <ul style="padding-left:30px;">
+                @if (item.Topic.TopicType == 1)
+                {
+                    <li>A.@item.Topic.TopicA</li>
+                    <li>B.@item.Topic.TopicB</li>
+                    <li>C.@item.Topic.TopicC</li>
+                    <li>D.@item.Topic.TopicD</li>
+                    <li>
+                        <span style="color:blue">您的答案是：@item.DetailAnswer</span>
+
+                    </li>
+
+                }
+                else if (item.Topic.TopicType == 2)
+                {
+                    <li>
+                        <span style="color:blue">您的答案是：@(item.DetailAnswer == "1" ? "对" : "错")</span>
+
+                    </li>
+                }
+                else if (item.Topic.TopicType == 3)
+                {
+                    <li> <span style="color:blue">您的答案是：@item.DetailAnswer</span></li>
+                }
+                
+            </ul>
+            </li>
+
+            }
+
+        </ul>
+    </fieldset>

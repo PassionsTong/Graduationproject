@@ -68,10 +68,52 @@ namespace Account.Controllers
         //添加考题
         public ActionResult Creates(int id) 
         {
+            
             ViewBag.pa= db.Paper.Find(id);
-            return View();
+          
+            ViewBag.s = db.Selects.Where(p => p.PaperID == id).OrderBy(p => p.Topic.TopicSort).ToList();
+                int sum = 0;
+                foreach (Selects item in ViewBag.s)
+                {
+                    sum += item.Topic.TopicScore;
+
+                }
+                TempData["Score"] = sum;
+            
+            
+            return View(db.Selects.ToList());
 
         }
-            
+        //添加
+        public ActionResult PaperIndex(int ids)
+        {
+            Session["Paper"] = ids;
+            return View(db.Topic.ToList());
+
+        }
+        public ActionResult Paper(int id)
+        {
+            //Paper paper = Session["Paper"] as Paper;
+
+            int kk =int.Parse(Session["Paper"].ToString());
+            Selects selects = new Selects()
+            {
+                PaperID = kk,
+                TopicID = id
+            };
+            db.Selects.Add(selects);
+            db.SaveChanges();
+            return RedirectToAction("Index", "Paper");
+        }
+        //删除试卷表考题
+        public ActionResult Deletes(int id)
+        {
+            Selects selects = db.Selects.Find(id);
+            db.Selects.Remove(selects);
+            db.SaveChanges();
+            return RedirectToAction("Index", "Paper");
+
+        }
+
     }
 }

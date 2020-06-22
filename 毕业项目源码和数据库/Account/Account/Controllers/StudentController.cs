@@ -58,5 +58,11 @@ namespace Account.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
+        //在线考试
+        public ActionResult Exam() 
+        {
+            List<Paper> papers = db.Paper.ToList();
+            return View(papers);
+        }
     }
 }

@@ -27,6 +27,7 @@ namespace Account.Controllers
             }
             else
             {
+                Session["LoginID"] = name.StuID;
                 return RedirectToAction("Index", "Home");
 
             }
@@ -48,7 +49,7 @@ namespace Account.Controllers
             Session["Tjh"] = name1;
             if (name1 == null)
             {
-                return Content("<script>alert('老师学生身份验证错误')</script>");
+                return Content("<script>alert('老师身份验证错误')</script>");
             }
             else
             {

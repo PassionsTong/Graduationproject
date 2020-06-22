@@ -43,20 +43,30 @@ namespace Account.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
-        //详情
-        public ActionResult Details(int id)
-        {
-            ViewBag.pa = db.Paper.Find(id);
-            List<Topic> topics = db.Topic.ToList();
-            return View(topics);
-        }
+        ////详情
+        //public ActionResult Details(int id)
+        //{
+        //    ViewBag.pa = db.Paper.Find(id);
+        //    List<Topic> topics = db.Topic.ToList();
+        //    return View(topics);
+        //}
         //删除
         public ActionResult Delete(int id)
         {
-            Paper menu = db.Paper.Find(id);
-            db.Paper.Remove(menu);
-            db.SaveChanges();
-            return RedirectToAction("Index");
+            Selects selects = db.Selects.Find(id);
+            if (selects == null)
+            {
+                Paper menu = db.Paper.Find(id);
+                db.Paper.Remove(menu);
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            else 
+            {
+                
+                return Content("<script>alert('此试卷有题目不可删除')</script>");
+            }
+            
         }
     }
 }
