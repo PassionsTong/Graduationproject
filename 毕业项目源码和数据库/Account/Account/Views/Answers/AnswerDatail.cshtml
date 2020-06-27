@@ -21,7 +21,6 @@
                 试卷时长：@Model.Paper.PaperTime<br />
 
             </td>
-            <td>         </td>
             <td>
                 <h4>考生信息</h4><hr />
                 学生名字：@Model.Student.StuName<br />
@@ -36,10 +35,10 @@
         <div>
             @for (int i = 1; i <=Model.Paper.Selects.Count; i++)
             {
-            <a href="#" onclick="topic(@Model.AnswerID,@i);">@i</a>
+            <a href="#" class="btn btn-primary" onclick="topic(@Model.AnswerID,@i);">@i</a>
 
             }
-            <a href="#" onclick="showAnswer(@Model.AnswerID);">试卷内容</a>
+            <a href="#" class="btn btn-warning" onclick="showAnswer(@Model.AnswerID);">试卷内容</a>
         </div>
         @using (Ajax.BeginForm("SubmitAnswer","Answers",null,new AjaxOptions {
             UpdateTargetId="topic",HttpMethod="Post",OnSuccess=""
