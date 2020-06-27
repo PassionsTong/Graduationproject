@@ -35,13 +35,13 @@
                             <li>@Html.ActionLink("学生管理", "Index", "Student")</li>
                             <li>@Html.ActionLink("老师管理", "Index", "Teacher")</li>
                             <li>@Html.ActionLink("试卷管理", "Index", "Paper")</li>
-                            <li>@Html.ActionLink("审卷", "Contact", "Home")</li>
+                            <li>@Html.ActionLink("审卷", "TeAnswer", "Answers")</li>
                             <li>@Html.ActionLink("题库", "Index", "Topics")</li>
 
                         }
                         else
                         {
-                            <li>@Html.ActionLink("我的考试", "Index", "Home")</li>
+                            <li>@Html.ActionLink("我的考试", "MyAnswer", "Answers")</li>
                             <li>@Html.ActionLink("我的资料", "xiang", "Login")</li>
                             <li>@Html.ActionLink("在线考试", "Exam", "Student")</li>
                         }

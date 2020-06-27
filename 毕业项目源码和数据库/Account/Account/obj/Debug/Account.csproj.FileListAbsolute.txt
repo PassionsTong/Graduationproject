@@ -88,3 +88,4 @@ D:\毕业项目\毕业项目源码和数据库\Account\Account\obj\Debug\Account
 D:\毕业项目\毕业项目源码和数据库\Account\Account\obj\Debug\Account.dll
 D:\毕业项目\毕业项目源码和数据库\Account\Account\obj\Debug\Account.pdb
 D:\毕业项目\毕业项目源码和数据库\Account\Account\bin\zh-Hans\EntityFramework.SqlServer.resources.dll
+D:\毕业项目\毕业项目源码和数据库\Account\Account\obj\Debug\Account.csprojAssemblyReference.cache

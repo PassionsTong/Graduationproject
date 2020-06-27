@@ -12,7 +12,7 @@
     }
 
     <h2>在线考试</h2>
-    <table>
+    <table class="table table-bordered table-hover">
         <tr>
             <td>
                 <h4>试卷描述</h4><hr />
@@ -26,7 +26,7 @@
                 <h4>考生信息</h4><hr />
                 学生名字：@Model.Student.StuName<br />
                 学生班级：@Model.Student.StuGrade<br />
-                <a href="#">交卷</a>
+                <a href="/Answers/Hand/@Model.AnswerID" class="btn btn-primary">交卷</a>
 
             </td>
         </tr>
