@@ -60,3 +60,4 @@ TopicID int foreign key references Topic(TopicID),
 DetailAnswer nvarchar (200) not NULL
 )
 delete  from Detail
+delete  from Answer
