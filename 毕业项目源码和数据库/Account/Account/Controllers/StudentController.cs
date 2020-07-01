@@ -44,6 +44,21 @@ namespace Account.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
+        //学生注册
+        public ActionResult Createstu()
+        {
+
+            return View();
+        }
+        [HttpPost]
+        public ActionResult Createstu(Student student)
+        {
+
+            db.Student.Add(student);
+            db.SaveChanges();
+            return RedirectToAction("Index", "Login");
+        }
+
         //详情
         public ActionResult Details(int id)
         {
@@ -64,5 +79,7 @@ namespace Account.Controllers
             List<Paper> papers = db.Paper.ToList();
             return View(papers);
         }
+        
+
     }
 }

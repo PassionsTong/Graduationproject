@@ -52,10 +52,19 @@ namespace Account.Controllers
         //删除
         public ActionResult Delete(int id)
         {
-            Teacher menu = db.Teacher.Find(id);
-            db.Teacher.Remove(menu);
-            db.SaveChanges();
-            return RedirectToAction("Index");
+            Answer answer = db.Answer.Find(id);
+            if (answer==null)
+            {
+                Teacher menu = db.Teacher.Find(id);
+                db.Teacher.Remove(menu);
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                return Content("<script>alert('老师不可删');history.go(-1)</script>");
+            }
+            
         }
     }
 }

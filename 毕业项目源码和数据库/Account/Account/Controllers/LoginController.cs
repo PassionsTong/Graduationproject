@@ -23,7 +23,7 @@ namespace Account.Controllers
             Session["Sjh"] = name;
             if (name == null)
             {
-                return Content("<script>alert('学生身份验证错误')</script>");
+                return Content("<script>alert('学生身份验证错误');history.go(-1)</script>");
             }
             else
             {
@@ -49,7 +49,7 @@ namespace Account.Controllers
             Session["Tjh"] = name1;
             if (name1 == null)
             {
-                return Content("<script>alert('老师身份验证错误')</script>");
+                return Content("<script>alert('老师身份验证错误');history.go(-1)</script>");
             }
             else
             {

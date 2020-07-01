@@ -64,7 +64,7 @@ namespace Account.Controllers
             else 
             {
                 
-                return Content("<script>alert('此试卷有题目不可删除')</script>");
+                return Content("<script>alert('此试卷有题目不可删除');history.go(-1)</script>");
             }
             
         }
