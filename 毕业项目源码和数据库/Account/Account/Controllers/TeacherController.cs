@@ -66,5 +66,19 @@ namespace Account.Controllers
             }
             
         }
+        //老师注册
+        public ActionResult Createtea() 
+        {
+            return View();
+        
+        }
+        [HttpPost]
+        public ActionResult Createtea(Teacher teacher) 
+        {
+           
+            db.Teacher.Add(teacher);
+            db.SaveChanges();
+            return RedirectToAction("Index","Login");
+        }
     }
 }

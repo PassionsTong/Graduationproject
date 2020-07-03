@@ -245,12 +245,12 @@
                                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
                                     <div class="temp-form-column-wrap">
                                         <h2>老师注册</h2>
-                                        <form>
+                                        <form action="/Teacher/Createtea"  method="post">
                                             <div class="row">
                                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                                     <div class="form-group">
                                                         <span class="temp-span-wrap temp-span-input-label-wrap">
-                                                            <input class="temp_input_field" type="text">
+                                                            <input class="temp_input_field" type="text" id="TeaName" name="TeaName">
                                                             <label class="temp_input_label">
                                                                 <span class="temp_input_label-content">名称</span>
                                                             </label>
@@ -260,7 +260,7 @@
                                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                                     <div class="form-group">
                                                         <span class="temp-span-wrap temp-span-input-label-wrap">
-                                                            <input class="temp_input_field" type="text">
+                                                            <input class="temp_input_field" type="text" id="TeaLoginName" name="TeaLoginName">
                                                             <label class="temp_input_label">
                                                                 <span class="temp_input_label-content">登录名</span>
                                                             </label>
@@ -270,7 +270,7 @@
                                                 <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
                                                     <div class="form-group">
                                                         <span class="temp-span-wrap temp-span-input-label-wrap">
-                                                            <input class="temp_input_field" type="password">
+                                                            <input class="temp_input_field" type="password" id="TeaLoginPwd" name="TeaLoginPwd">
                                                             <label class="temp_input_label">
                                                                 <span class="temp_input_label-content">密码</span>
                                                             </label>
@@ -290,7 +290,7 @@
                                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                                     <div class="form-group">
                                                         <span class="temp-span-wrap temp-span-input-label-wrap">
-                                                            <input class="temp_input_field" type="text">
+                                                            <input class="temp_input_field" type="text" id="TeaPhone" name="TeaPhone">
                                                             <label class="temp_input_label">
                                                                 <span class="temp_input_label-content">手机号码</span>
                                                             </label>
@@ -300,7 +300,7 @@
                                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                                     <div class="form-group">
                                                         <span class="temp-span-wrap temp-span-input-label-wrap">
-                                                            <input class="temp_input_field" type="text">
+                                                            <input class="temp_input_field" type="text" id="TeaEmail" name="TeaEmail">
                                                             <label class="temp_input_label">
                                                                 <span class="temp_input_label-content">邮箱</span>
                                                             </label>
@@ -309,7 +309,7 @@
                                                 </div>
                                                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                                                     <div class="temp-login-button-wrap">
-                                                        <button class="btn btn-info temp-form-button" type="button">提交注册</button>
+                                                        <button class="btn btn-info temp-form-button" type="submit">提交注册</button>
                                                     </div>
                                                 </div>
                                             </div>
