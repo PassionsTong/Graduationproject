@@ -26,5 +26,9 @@ namespace Account.Controllers
 
             return View();
         }
+        public ActionResult LoginIndex()
+        {
+            return View();
+        }
     }
 }

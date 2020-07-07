@@ -53,7 +53,7 @@ namespace Account.Controllers
         //删除
         public ActionResult Delete(int id)
         {
-            Selects selects = db.Selects.Find(id);
+            var selects = db.Selects.Where(p=>p.PaperID==id);
             if (selects == null)
             {
                 Paper menu = db.Paper.Find(id);

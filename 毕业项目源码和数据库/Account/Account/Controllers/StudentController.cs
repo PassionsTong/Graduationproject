@@ -39,10 +39,19 @@ namespace Account.Controllers
         [HttpPost]
         public ActionResult Create(Student student)
         {
+            try
+            {
+                db.Student.Add(student);
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            catch (Exception)
+            {
+                return Content("<script>alert('请输入正确！');history.go(-1)</script>");
+                throw;
+            }
 
-            db.Student.Add(student);
-            db.SaveChanges();
-            return RedirectToAction("Index");
+           
         }
         //学生注册
         public ActionResult Createstu()
@@ -53,10 +62,18 @@ namespace Account.Controllers
         [HttpPost]
         public ActionResult Createstu(Student student)
         {
-
-            db.Student.Add(student);
-            db.SaveChanges();
-            return RedirectToAction("Index", "Login");
+            try
+            {
+                db.Student.Add(student);
+                db.SaveChanges();
+                return RedirectToAction("Index", "Login");
+            }
+            catch (Exception)
+            {
+                return Content("<script>alert('请输入正确！');history.go(-1)</script>");
+                throw;
+            }
+           
         }
 
         //详情
@@ -68,10 +85,19 @@ namespace Account.Controllers
         //删除
         public ActionResult Delete(int id)
         {
-            Student menu = db.Student.Find(id);
-            db.Student.Remove(menu);
-            db.SaveChanges();
-            return RedirectToAction("Index");
+            try
+            {
+                Student menu = db.Student.Find(id);
+                db.Student.Remove(menu);
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            catch (Exception)
+            {
+                return Content("<script>alert('不可删除！');history.go(-1)</script>");
+                throw;
+            }
+            
         }
         //在线考试
         public ActionResult Exam() 

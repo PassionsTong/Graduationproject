@@ -28,7 +28,7 @@ namespace Account.Controllers
             else
             {
                 Session["LoginID"] = name.StuID;
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction("LoginIndex", "Home");
 
             }
             
@@ -53,7 +53,7 @@ namespace Account.Controllers
             }
             else
             {
-                return RedirectToAction("Index", "Home");
+                return RedirectToAction("LoginIndex", "Home");
 
             }
 

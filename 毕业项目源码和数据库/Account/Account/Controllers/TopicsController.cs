@@ -45,10 +45,19 @@ namespace Account.Controllers
         //删除
         public ActionResult Delete(int id)
         {
-            Topic topic = db.Topic.Find(id);
-            db.Topic.Remove(topic);
-            db.SaveChanges();
-            return RedirectToAction("Index");
+            try
+            {
+                Topic topic = db.Topic.Find(id);
+                db.Topic.Remove(topic);
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            catch (System.Exception)
+            {
+                return Content("<script>alert('不可删除！');history.go(-1)</script>");
+                throw;
+            }
+           
 
         }
         //修改
@@ -94,16 +103,19 @@ namespace Account.Controllers
         public ActionResult Paper(int id)
         {
             //Paper paper = Session["Paper"] as Paper;
+            int kk = int.Parse(Session["Paper"].ToString());
+           
 
-            int kk =int.Parse(Session["Paper"].ToString());
-            Selects selects = new Selects()
-            {
-                PaperID = kk,
-                TopicID = id
-            };
-            db.Selects.Add(selects);
-            db.SaveChanges();
-            return RedirectToAction("Index", "Paper");
+                Selects selects = new Selects()
+                {
+                    PaperID = kk,
+                    TopicID = id
+                };
+                db.Selects.Add(selects);
+                db.SaveChanges();
+                return RedirectToAction("Index", "Paper");
+           
+          
         }
         //删除试卷表考题
         public ActionResult Deletes(int id)

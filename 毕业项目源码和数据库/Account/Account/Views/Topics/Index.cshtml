@@ -16,7 +16,7 @@
         <li style="padding:20px;">
             <span style="font-weight:bold">@item.TopicExplain</span>(@item.TopicScore 分)
             <a href="/Topics/Delete/@item.TopicID" onclick="return confirm('你确定要删除这一栏么？')">删除考题</a>-
-            <a href="/Topics/Edit/@item.TopicID">修改考题</a>
+            <a href="/Topics/Edit/?id=@item.TopicID">修改考题</a>
             <ul style="padding-left:30px;">
                 @if (item.TopicType == 1)
                 {

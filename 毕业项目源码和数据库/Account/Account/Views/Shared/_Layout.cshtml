@@ -13,8 +13,8 @@
         Student stu = Session["Sjh"] as Student;
     }
 </head>
-<body>
-    <div class="navbar navbar-inverse navbar-fixed-top" style="background-color:#992168 ; ">
+<body style="background-image:url('../images/hhtp.jpg');color:white;  background-position: center center;background-size: cover;height: 100vh;position: relative;">
+    <div class="navbar navbar-inverse navbar-fixed-top" style="background-color:#992168 ; " >
         <div class="">
             
             <div class="row">
@@ -24,7 +24,7 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    @Html.ActionLink("天天考试网", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                    @Html.ActionLink("天天考试网", "LoginIndex", "Home", new { area = "" }, new { @class = "navbar-brand" })
                 </div>
 
                 <div class="col-lg-6">
@@ -63,7 +63,7 @@
                         }
                         else if (Session["Sjh"] == null)
                         {
-                            <span style="color:white"> @tea.TeaName 老师您好, 欢迎光临在线全自动考试系统</span>
+                            <span style="color: white"> @tea.TeaName 老师您好, 欢迎光临在线全自动考试系统</span>
                             <a href="/Login/Exit" class="btn btn-warning">退出系统</a>
                         }
                         else
@@ -83,7 +83,7 @@
         </div>
         
     </div>
-    <div class="container body-content">
+    <div class="container body-content" >
         @RenderBody()
         <hr />
         <footer>

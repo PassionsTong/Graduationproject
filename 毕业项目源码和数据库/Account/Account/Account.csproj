@@ -191,6 +191,7 @@
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="images\banner1.jpg" />
+    <Content Include="images\hhtp.jpg" />
     <Content Include="images\payment.jpg" />
     <Content Include="img\1.jpg" />
     <Content Include="img\2.jpg" />
@@ -281,6 +282,7 @@
     <Content Include="Views\Answers\TeAnswerDetail.cshtml" />
     <Content Include="Views\Answers\MyAnswer.cshtml" />
     <Content Include="Views\Answers\MyAnswerDetail.cshtml" />
+    <Content Include="Views\Home\LoginIndex.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -25,10 +25,19 @@ namespace Account.Controllers
         [HttpPost]
         public ActionResult Create(Teacher teacher)
         {
+            try
+            {
+                db.Teacher.Add(teacher);
+                db.SaveChanges();
+                return RedirectToAction("Index");
 
-            db.Teacher.Add(teacher);
-            db.SaveChanges();
-            return RedirectToAction("Index");
+            }
+            catch (Exception)
+            {
+                return Content("<script>alert('请输入正确！');history.go(-1)</script>");
+                throw;
+            }
+            
         }
         //修改
         public ActionResult Edit(int id)
@@ -75,10 +84,18 @@ namespace Account.Controllers
         [HttpPost]
         public ActionResult Createtea(Teacher teacher) 
         {
+            try
+            {
+                db.Teacher.Add(teacher);
+                db.SaveChanges();
+                return RedirectToAction("Index", "Login");
+            }
+            catch (Exception)
+            {
+                return Content("<script>alert('请输入正确！');history.go(-1)</script>");
+                throw;
+            }
            
-            db.Teacher.Add(teacher);
-            db.SaveChanges();
-            return RedirectToAction("Index","Login");
         }
     }
 }
