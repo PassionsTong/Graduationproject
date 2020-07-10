@@ -13,7 +13,7 @@
 
     <h2>在线考试</h2>
     <table class="table table-bordered table-hover">
-        <tr style="color:black" onmouseover="this.style.color='red'" onmouseout="this.style.color='#000000'">
+        <tr>
             <td>
                 <h4>试卷描述</h4><hr />
                 试卷名称：@Model.Paper.PaperNmae<br />
@@ -31,7 +31,7 @@
         </tr>
     </table>
     <fieldset>
-        <legend style="color:white">答题区</legend>
+        <legend >答题区</legend>
         <div>
             @for (int i = 1; i <=Model.Paper.Selects.Count; i++)
             {

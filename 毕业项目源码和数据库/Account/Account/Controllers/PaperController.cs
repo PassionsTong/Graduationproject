@@ -25,10 +25,18 @@ namespace Account.Controllers
         [HttpPost]
         public ActionResult Create(Paper paper)
         {
-
-            db.Paper.Add(paper);
-            db.SaveChanges();
-            return RedirectToAction("Index");
+            try
+            {
+                db.Paper.Add(paper);
+                db.SaveChanges();
+                return RedirectToAction("Index");
+            }
+            catch (Exception)
+            {
+                return Content("<script>alert('请输入正确！');history.go(-1)</script>");
+                throw;
+            }
+            
         }
         //编辑
         public ActionResult Edit(int id)
